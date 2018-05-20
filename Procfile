@@ -1,0 +1,1 @@
+web: gunicorn sito_tesina.wsgi --log-file -
