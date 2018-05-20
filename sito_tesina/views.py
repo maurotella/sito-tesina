@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 def index(request):
-    file = 'stazioni_meteo/index.html'
+    file = 'sito_tesina/index.html'
     return render(request,file)
 
