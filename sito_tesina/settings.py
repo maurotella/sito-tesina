@@ -55,7 +55,7 @@ ROOT_URLCONF = 'sito_tesina.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['sito_tesina/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
