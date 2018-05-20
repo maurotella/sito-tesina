@@ -127,3 +127,4 @@ DATABASES['default'].update(db_from_env)
 AWS_STORAGE_BUCKET_NAME = 'sito-tesina'
 AWS_LOCATION = 'static'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_SIGNATURE_VERSION = 's3v4' 
