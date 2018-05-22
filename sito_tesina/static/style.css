@@ -3,7 +3,8 @@
 {% load static %}
 @font-face{
   font-family: Django;
-  src: url("https://www.dropbox.com/s/xju7owpbpdh4l93/Django-font.ttf?dl=1");
+  src: url("https://www.dropbox.com/s/xju7owpbpdh4l93/Django-font.ttf?dl=1"),
+       url("https://www.dropbox.com/s/e2nnyyupahcldbp/Django-font.woff?dl=1");
 }
 html, body {
   margin: 0;
