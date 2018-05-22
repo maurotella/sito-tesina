@@ -125,5 +125,6 @@ STATIC_URL = '/static/'
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+DROPBOX_OAUTH2_TOKEN = '7coNyutNiiAAAAAAAAAAbuItPYoub0--x1FndOu2bUVuVH2sPCEl1QU9WbLI2iCQ'
 STATICFILES_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 DROPBOX_ROOT_PATH = 'static'
