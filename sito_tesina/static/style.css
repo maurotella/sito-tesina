@@ -3,7 +3,7 @@
 {% load static %}
 @font-face{
   font-family: Django;
-  src: url("{% static 'sito_tesina/css/Django-font.ttf' %}");
+  src: url("https://www.dropbox.com/s/xju7owpbpdh4l93/Django-font.ttf?dl=1");
 }
 html, body {
   margin: 0;
