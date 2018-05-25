@@ -1,1 +1,3 @@
 requirements_S3.txt
+/static
+.code-workspace
