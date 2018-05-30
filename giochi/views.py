@@ -6,4 +6,4 @@ def index(request):
     return render(request, 'giochi/index.html')
 
 def tower_block(request):
-    return render(request, 'giochi/tower-block.html')
+    return render(request, 'giochi/tower_block.html')
