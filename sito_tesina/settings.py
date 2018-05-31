@@ -123,9 +123,6 @@ USE_TZ = True
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    "sito_tesina/static"
-]
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
