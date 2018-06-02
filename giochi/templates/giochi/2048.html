@@ -65,7 +65,11 @@
   <hr>
   <div>
     <h1>Classifica</h1>
-
+    <ul>
+    {% for c in classifica %}
+      <li>{{c}}</li>
+    {% endfor %}
+    </ul>
   </div>
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.6/hammer.min.js'></script>
