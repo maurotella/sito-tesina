@@ -10,7 +10,8 @@ def tower_block(request):
     return render(request, 'giochi/tower_block.html')
 
 def gioco2048(request):
-    return render(request, 'giochi/2048.html')
+    classifica = Classifica.objects.get(gioco="2048") 
+    return render(request, 'giochi/2048.html', {classifica:classifica})
 
 def risultato(request):
     gioco = None
