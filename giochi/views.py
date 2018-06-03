@@ -15,12 +15,9 @@ def gioco2048(request):
     return render(request, 'giochi/2048.html', {'classifica':classifica})
 
 def risultato(request,gioco,risultato,self):
-    self.gioco = gioco
-    self.risultato = risultato
-    self.user = "anonimo"
     if request.method == 'GET':
         if gioco:
-            new_risultato = Classifica(gioco=gioco, risultato=risultato, user=user)
+            new_risultato = Classifica(gioco=gioco, risultato=risultato, user="anonimo")
             new_risultato.save()
         return HttpResponse("Fatto")
 
