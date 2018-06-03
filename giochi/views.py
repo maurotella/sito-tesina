@@ -11,7 +11,7 @@ def tower_block(request):
     return render(request, 'giochi/tower_block.html')
 
 def gioco2048(request):
-    return render(request, 'giochi/2048.html', {'classifica':classifica})
+    return render(request, 'giochi/2048.html')
 
 def risultato(request,gioco,risultato):
     if request.method == 'GET':
