@@ -10,7 +10,7 @@
     <div>
         <ul>
         {% for c in classifica %}
-            <li>{{ c }}</li>
+            <li>{{ c.user }} : <span class="risultato">{{ c.risultato }}</span></li>
         {% endfor %}
         </ul>
     </div>
