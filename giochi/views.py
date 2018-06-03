@@ -13,17 +13,13 @@ def gioco2048(request):
     classifica = Classifica.objects.filter(gioco="2048") 
     return render(request, 'giochi/2048.html', {'classifica':classifica})
 
-def risultato(request):
-    gioco = None
-    risultato = None
-    user = None
+def risultato(request,gioco,risultato):
+    self.gioco = gioco
+    self.risultato = risultato
+    self.user = "anonimo"
     if request.method == 'GET':
-        gioco = request.GET['gioco']
-        risultato = request.GET['risultato']
-        user = request.GET['user']
-
-    if gioco:
-        new_risultato = Classifica(gioco=gioco, risultato=risultato, user=user)
-        new_risultato.save()
+        if gioco:
+            new_risultato = Classifica(gioco=gioco, risultato=risultato, user=user)
+            new_risultato.save()
 
     
