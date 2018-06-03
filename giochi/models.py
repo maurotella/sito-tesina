@@ -9,6 +9,6 @@ class Classifica(models.Model):
     data = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return(self.gioco + " | " + self.user + " : " + str(self.risultato)
+        return(self.gioco + " | " + self.user + " : " + str(self.risultato))
 
 
