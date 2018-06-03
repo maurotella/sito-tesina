@@ -14,7 +14,7 @@ def gioco2048(request):
     classifica = Classifica.objects.filter(gioco="2048") 
     return render(request, 'giochi/2048.html', {'classifica':classifica})
 
-def risultato(request,gioco,risultato,self):
+def risultato(request,gioco,risultato):
     if request.method == 'GET':
         if gioco:
             new_risultato = Classifica(gioco=gioco, risultato=risultato, user="anonimo")
