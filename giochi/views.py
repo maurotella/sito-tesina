@@ -11,7 +11,6 @@ def tower_block(request):
     return render(request, 'giochi/tower_block.html')
 
 def gioco2048(request):
-    classifica = Classifica.objects.filter(gioco="2048") 
     return render(request, 'giochi/2048.html', {'classifica':classifica})
 
 def risultato(request,gioco,risultato):
@@ -20,5 +19,10 @@ def risultato(request,gioco,risultato):
             new_risultato = Classifica(gioco=gioco, risultato=risultato, user="anonimo")
             new_risultato.save()
         return HttpResponse("Fatto")
+
+def carica_classifica(request,gioco):
+    if gioco == '2048':    
+        classifica = Classifica.objects.filter(gioco="2048") 
+    return render(request,'giochi/classifica.html', {'gioco':gioco, 'classifica':classifica})
 
     

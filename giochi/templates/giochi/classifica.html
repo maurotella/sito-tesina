@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+    {% if gioco=='2048' %}
+    <link rel="stylesheet" href="{% static 'giochi/2048/css/classifica.css' %}">
+    {% endif %}
+</head>
+<body>
+    <div>
+        {% for c in classifica %}
+            {{ c }}
+        {% endfor %}
+    </div>
+</body>
+</html>
