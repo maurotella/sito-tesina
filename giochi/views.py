@@ -22,7 +22,7 @@ def risultato(request,gioco,risultato):
 
 def carica_classifica(request,gioco):
     if gioco == '2048':    
-        classifica = Classifica.objects.filter(gioco="2048").order_by('punteggio') 
+        classifica = Classifica.objects.filter(gioco="2048").order_by('risultato') 
     return render(request,'giochi/classifica.html', {'gioco':gioco, 'classifica':classifica})
 
     
