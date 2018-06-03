@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from . models import Classifica
 
 # Create your views here.
@@ -21,5 +22,6 @@ def risultato(request,gioco,risultato):
         if gioco:
             new_risultato = Classifica(gioco=gioco, risultato=risultato, user=user)
             new_risultato.save()
+        return HttpResponse("Fatto")
 
     
