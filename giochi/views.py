@@ -13,10 +13,10 @@ def tower_block(request):
 def gioco2048(request):
     return render(request, 'giochi/2048.html')
 
-def risultato(request,gioco,risultato):
+def risultato(request,gioco,risultato,user):
     if request.method == 'GET':
         if gioco:
-            new_risultato = Classifica(gioco=gioco, risultato=risultato, user="anonimo")
+            new_risultato = Classifica(gioco=gioco, risultato=risultato, user=user)
             new_risultato.save()
         return HttpResponse("Fatto")
 
