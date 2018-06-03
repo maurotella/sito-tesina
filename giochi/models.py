@@ -5,7 +5,7 @@ from django.db import models
 class Classifica(models.Model):
     risultato = models.IntegerField()
     gioco = models.CharField(max_length=30, default="")
-    user = models.CharField(max_length=30, default="anonimo")
+    user = models.CharField(max_length=30, default="Anonimo")
     data = models.DateTimeField(auto_now=True)
     
     def __str__(self):
