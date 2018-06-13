@@ -15,7 +15,30 @@
 <table class="body">
   <tr>
     <td>
+      {% csrf_token %}
       {{ form }}
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <th>Codice</th>
+          <th>Colore</th>
+        </tr>
+        <tr>
+          {% if not colori %}
+            <td collspan="2">Non ci sono Colori</td>
+          {% endif %}
+          {% for riga in colori %}
+            <td>{{ riga.codice }}</td>
+            <td>{{ riga.colore }}</td>
+          {% endfor %}
+        </tr>
+      </table>
     </td>
   </tr>
 </table>

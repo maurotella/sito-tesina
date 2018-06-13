@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Colori
 from .forms import ColoriForm
 
 # Create your views here.
@@ -8,4 +9,4 @@ def index(request):
     if request.method == 'GET':
         return render(request,'app/index.html', {'form':form})
     else:
-        return render(request,'app/index.html', {'form':form})
+        return render(request,'app/index.html', {'form':form , 'colori': Colori.object.all()})
