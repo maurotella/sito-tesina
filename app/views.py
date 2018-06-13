@@ -7,6 +7,6 @@ from .forms import ColoriForm
 def index(request):
     form = ColoriForm()
     if request.method == 'GET':
-        return render(request,'app/index.html', {'form':form})
+        return render(request,'app/index.html', {'form':form,'colori': Colori.object.all()})
     else:
         return render(request,'app/index.html', {'form':form , 'colori': Colori.object.all()})
