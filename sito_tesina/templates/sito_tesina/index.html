@@ -82,12 +82,15 @@
 
     <h3>Come funziona <span class="django">django</span>?</h3>
     <div>Vediamo concretamente un'applicazione <span class="django">django</span>:</div>
-    <form action="app/" method="post">
-      <input type="submit" value="App di esempio">
-    </form>
+    <input type="button" value="App di esempio" onclick="app()">
 
    </div>
 </section>
+  <script>
+    function app(){
+      window.location.href = "app/";
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script  src="{% static 'sito_tesina/js/index.js' %}"></script>
 
