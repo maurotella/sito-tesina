@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from .forms import ColoriForm
 
 # Create your views here.
 
 def index(request):
-    return render(request,'app/index.html')
+    form = ColoriForm()
+    if request.method == 'GET':
+        return render(request,'app/index.html', {'form':form})
+    else:
+        return render(request,'app/index.html', {'form':form})
