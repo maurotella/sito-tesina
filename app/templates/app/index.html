@@ -29,12 +29,8 @@
 
         <form method="GET" action="">
           <h1>Cerca dei colori</h1>
-          {% csrf_token %}
-          {% for f in form %}
-            <p>
-              {{f.label_tag}} {{f}}
-            </p>
-          {% endfor %}
+          <p><input type="text" name="codice" pattern="^#(?:[0-9a-fA-F]{3}){1,2}$" title="Il codice deve iniziare con # e finire con altre 6 lettere" id="id_codice" />
+          </p>
           <input type="submit" value="Cerca">
         </form>
 
@@ -76,7 +72,7 @@
               <td>{{ riga.colore }}</td>
               <td style="background-color: {{ riga.codice }} ;"></td>
             </tr>
-            {% endfor %}
+            {% endfor %} 
           </table>
           {% endif %}
           
