@@ -47,10 +47,14 @@
 
     <div class="colonna">
       Bello
-      {{errore}}
     </div>
 </div>
 
+{% if errore == "Esiste già" %}
+  <script>
+    alert("Il codice è già stato usato");
+  </script>
+{% endif %}
 
 
 </body>
