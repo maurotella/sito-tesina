@@ -9,7 +9,7 @@ def index(request):
     if request.method == 'POST':
         codice = request.POST['codice'].lower()
         colore = ""
-        for c in colori:
+        for c in Colori.objects.all():
             if c.codice == codice:
                 return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
         for posizione in range(len(request.POST['colore'])):
