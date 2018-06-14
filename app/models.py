@@ -7,4 +7,4 @@ class Colori(models.Model):
     colore = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.colore + " | " + self.codice.upper()
+        return self.colore + " | " + self.codice
