@@ -16,8 +16,12 @@
 
     <div class="colonna">
       <form method="POST" action="">
-        {% csrf_token %}
-        {{ form }}
+      {% csrf_token %}
+      {% for f in form %}
+        <p>
+          {{f.label_tag}} {{f}}
+        </p>
+      {% endfor %}
         <input type="submit" value="Inserisci">
       </form>
       <table>
