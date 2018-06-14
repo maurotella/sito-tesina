@@ -16,6 +16,7 @@
 
     <div class="colonna">
       <form method="POST" action="">
+      <h1>Inserisci dei colori</h1>
       {% csrf_token %}
       {% for f in form %}
         <p>
@@ -24,6 +25,18 @@
       {% endfor %}
         <input type="submit" value="Inserisci">
       </form>
+
+      <form method="POST" action="">
+        <h1>Cerca dei colori</h1>
+        {% csrf_token %}
+        {% for f in form %}
+          <p>
+            {{f.label_tag}} {{f}}
+          </p>
+        {% endfor %}
+        <input type="submit" value="Inserisci">
+      </form>
+
       <table>
           <tr>
             <th>Codice</th>
