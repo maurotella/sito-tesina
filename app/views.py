@@ -7,7 +7,7 @@ from .forms import ColoriForm
 def index(request):
     form = ColoriForm()
     if request.method == 'POST':
-        codice = request.POST('codice').lower()
+        codice = request.POST['codice'].lower()
         colore = ""
         for posizione in range(len(request.POST('colore'))):
             if posizione == 0:
