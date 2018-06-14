@@ -12,27 +12,21 @@
   <h1>Database <span>colori</span></h1>
 </header>
 
-<table class="body">
-  <tr>
-    <td>
+<div class="div">
+    <div class="colonna">
       <form method="POST" action="">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Inserisci">
       </form>
-    </td>
-    <td>
-
-    </td>
-  </tr>
-  <tr>
-    <td>
+    </div>
+    <div class="colonna">
       <table>
         <tr>
           <th>Codice</th>
           <th>Colore</th>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
           {% if not colori %}
             <td collspan="2">Non ci sono Colori</td>
           {% endif %}
@@ -40,11 +34,11 @@
             <td>{{ riga.codice }}</td>
             <td>{{ riga.colore }}</td>
           {% endfor %}
-        </tr>
+          </tr>
       </table>
-    </td>
-  </tr>
-</table>
+    </div>
+</div>
+  
 
 </body>
 </html>
