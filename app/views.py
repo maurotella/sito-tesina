@@ -21,7 +21,7 @@ def index(request):
         NuovoColore.save()
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
     elif request.method == 'GET':
-        codice = request.GET['codice'].lower()
+        codice = request.GET.get('codice')
         colore = ""
         for posizione in range(len(request.POST['colore'])):
             if posizione == 0:
