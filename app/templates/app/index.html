@@ -29,8 +29,8 @@
 
         <form method="GET" action="">
           <h1>Cerca dei colori</h1>
-          <p><input type="text" name="codice" pattern="^#(?:[0-9a-fA-F]{3}){1,2}$" title="Il codice deve iniziare con # e finire con altre 6 lettere" id="id_codice" />
-          </p>
+          <p><label for="id_colore">Codice esadecimale:</label><input type="text" name="codice" pattern="^#(?:[0-9a-fA-F]{3}){1,2}$" title="Il codice deve iniziare con # e finire con altre 6 lettere" id="id_codice" /></p>
+          <p><label for="id_colore">Nome del colore:</label> <input type="text" name="colore" maxlength="30" required id="id_colore" /></p>
           <input type="submit" value="Cerca">
         </form>
 
