@@ -15,49 +15,50 @@
 <div class="div">
 
     <div class="colonna">
-      <form method="POST" action="">
-      <h1>Inserisci dei colori</h1>
-      {% csrf_token %}
-      {% for f in form %}
-        <p>
-          {{f.label_tag}} {{f}}
-        </p>
-      {% endfor %}
-        <input type="submit" value="Inserisci">
-      </form>
-
-      <form method="POST" action="">
-        <h1>Cerca dei colori</h1>
+      <div class="form">
+        <form method="POST" action="">
+        <h1>Inserisci dei colori</h1>
         {% csrf_token %}
         {% for f in form %}
           <p>
             {{f.label_tag}} {{f}}
           </p>
         {% endfor %}
-        <input type="submit" value="Inserisci">
-      </form>
+          <input type="submit" value="Inserisci">
+        </form>
 
-      <table>
-          <tr>
-            <th>Codice</th>
-            <th>Colore</th>
-            <th>Esempio</th>
-          </tr>
-          {% if not colori %}
-          <tr>
-            <td colspan="2">Non ci sono Colori</td>
-          </tr>
-          {% endif %}
-          {% for riga in colori %}
-          <tr>
-            <td>{{ riga.codice }}</td>
-            <td>{{ riga.colore }}</td>
-            <td style="background-color: {{ riga.codice }} ;"></td>
-          </tr>
+        <form method="POST" action="">
+          <h1>Cerca dei colori</h1>
+          {% csrf_token %}
+          {% for f in form %}
+            <p>
+              {{f.label_tag}} {{f}}
+            </p>
           {% endfor %}
-        </table>
-    </div>
+          <input type="submit" value="Inserisci">
+        </form>
 
+        <table>
+            <tr>
+              <th>Codice</th>
+              <th>Colore</th>
+              <th>Esempio</th>
+            </tr>
+            {% if not colori %}
+            <tr>
+              <td colspan="2">Non ci sono Colori</td>
+            </tr>
+            {% endif %}
+            {% for riga in colori %}
+            <tr>
+              <td>{{ riga.codice }}</td>
+              <td>{{ riga.colore }}</td>
+              <td style="background-color: {{ riga.codice }} ;"></td>
+            </tr>
+            {% endfor %}
+          </table>
+      </div>
+    </div>
     <div class="colonna">
       Bello
     </div>
