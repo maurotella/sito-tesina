@@ -19,23 +19,24 @@
         {{ form }}
         <input type="submit" value="Inserisci">
       </form>
+      <table>
+          <tr>
+            <th>Codice</th>
+            <th>Colore</th>
+          </tr>
+          <tr>
+          {% if not colori %}
+            <td collspan="2">Non ci sono Colori</td>
+          {% endif %}
+          {% for riga in colori %}
+            <td>{{ riga.codice }}</td>
+            <td>{{ riga.colore }}</td>
+          {% endfor %}
+          </tr>
+        </table>
     </div>
     <div class="colonna">
-      <table>
-        <tr>
-          <th>Codice</th>
-          <th>Colore</th>
-        </tr>
-        <tr>
-        {% if not colori %}
-          <td collspan="2">Non ci sono Colori</td>
-        {% endif %}
-        {% for riga in colori %}
-          <td>{{ riga.codice }}</td>
-          <td>{{ riga.colore }}</td>
-        {% endfor %}
-        </tr>
-      </table>
+      Bello
     </div>
 </div>
   
