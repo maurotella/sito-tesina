@@ -23,7 +23,7 @@ def index(request):
     elif request.method == 'GET':
         codice = request.GET.get('codice')
         colore = ""
-        for posizione in range(len(request.POST['colore'])):
+        for posizione in range(len(request.POST.get('colore'))):
             if posizione == 0:
                 colore += request.POST['colore'][posizione].upper()
             else:
