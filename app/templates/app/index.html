@@ -27,7 +27,7 @@
           <input type="submit" value="Inserisci">
         </form>
 
-        <form method="POST" action="">
+        <form method="GET" action="">
           <h1>Cerca dei colori</h1>
           {% csrf_token %}
           {% for f in form %}
@@ -57,6 +57,29 @@
             </tr>
             {% endfor %}
           </table>
+
+          {% if select %}
+          <table>
+            <tr>
+              <th>Codice</th>
+              <th>Colore</th>
+              <th>Esempio</th>
+            </tr>
+            {% if select|length %}
+            <tr>
+              <td colspan="2">Nessun colore corrispondente trovato</td>
+            </tr>
+            {% endif %}
+            {% for riga in select %}
+            <tr>
+              <td>{{ riga.codice }}</td>
+              <td>{{ riga.colore }}</td>
+              <td style="background-color: {{ riga.codice }} ;"></td>
+            </tr>
+            {% endfor %}
+          </table>
+          {& endif &}
+          
       </div>
     </div>
     <div class="colonna">
