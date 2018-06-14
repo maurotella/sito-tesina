@@ -5,11 +5,6 @@
   <meta charset="UTF-8">
   <title>Giochi</title>
   <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-  {% if errore %}
-  <script>
-    alert("Il codice è già stato usato");
-  </script>
-  {% endif %}
 </head>
 
 <body>
@@ -54,6 +49,12 @@
       Bello
     </div>
 </div>
+
+{% if errore == 'Esiste già' %}
+  <script>
+    alert("Il codice è già stato usato");
+  </script>
+{% endif %}
 
 </body>
 </html>
