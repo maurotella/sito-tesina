@@ -15,9 +15,11 @@
 <table class="body">
   <tr>
     <td>
-      {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Inserisci">
+      <form method="POST" action="">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Inserisci">
+      </form>
     </td>
     <td>
 
