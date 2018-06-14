@@ -10,9 +10,9 @@ def index(request):
     if request.method == 'POST':
         codice = request.POST['codice'].lower()
         colore = ""
-        for colore in colori:
-            if colore.codice == codice:
-                 return render(request,'app/index.html', {'form':form,'colori': colori,'errore':'Esiste già'})
+        for c in colori:
+            if c.codice == codice:
+                return render(request,'app/index.html', {'form':form,'colori': colori,'errore':'Esiste già'})
         for posizione in range(len(request.POST['colore'])):
             if posizione == 0:
                 colore += request.POST['colore'][posizione].upper()
@@ -22,4 +22,4 @@ def index(request):
         NuovoColore.save()
         return render(request,'app/index.html', {'form':form,'colori': colori})
     else:
-        return render(request,'app/index.html', {'form':form , 'colori': colori})
+        return render(request,'app/index.html', {'form':form,'colori': colori})
