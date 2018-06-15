@@ -29,7 +29,8 @@ def index(request):
                     colore += request.POST['colore'][posizione].upper()
                 else:
                     colore += request.POST['colore'][posizione].lower()
-        select = Colori.objects.filter(colore__startswith=colore, codice__startswith=codice)
-        return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':select})
+            select = Colori.objects.filter(colore__startswith=colore, codice__startswith=codice)
+            return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':select})
+        return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':{}})
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
