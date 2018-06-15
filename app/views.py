@@ -22,14 +22,19 @@ def index(request):
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
     elif request.method == 'GET':
         codice = request.GET.get('codice')
+        if codice != "":
+            codice.replace("%23","#")
         colore = ""
-        if request.POST.get('colore'):
+        if request.POST.get('colore') and codice != "":
             for posizione in range(len(request.POST.get('colore'))):
                 if posizione == 0:
                     colore += request.POST['colore'][posizione].upper()
                 else:
                     colore += request.POST['colore'][posizione].lower()
             select = Colori.objects.filter(colore__startswith=colore, codice__startswith=codice)
+            return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':select})
+        elif codice != "":
+            select = Colori.objects.filter(codice__startswith=codice)
             return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':select})
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':{}})
     else:
