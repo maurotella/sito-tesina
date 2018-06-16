@@ -24,13 +24,15 @@
             {{f.label_tag}} {{f}}
           </p>
         {% endfor %}
+          <input type="hidden" value="Inserisci" name="metodo">
           <input type="submit" value="Inserisci">
         </form>
 
-        <form method="GET" action="">
+        <form method="POST" action="">
           <h1>Cerca dei colori</h1>
           <p><label for="id_colore">Codice esadecimale:</label><input type="text" name="codice" id="id_codice" /></p>
           <p><label for="id_colore">Nome del colore:</label> <input type="text" name="colore" maxlength="30" id="id_colore" /></p>
+          <input type="hidden" value="Ricerca" name="metodo">
           <input type="submit" value="Cerca">
         </form>
 
@@ -52,27 +54,6 @@
               <td style="background-color: {{ riga.codice }} ;"></td>
             </tr>
             {% endfor %}
-          </table>
-
-          {% if select %}
-          <table>
-            <tr>
-              <th>Codice</th>
-              <th>Colore</th>
-              <th>Esempio</th>
-            </tr>
-            {% if select|length == 0 %}
-            <tr>
-              <td colspan="2">Nessun colore corrispondente trovato</td>
-            </tr>
-            {% endif %}
-            {% for riga in select %}
-            <tr>
-              <td>{{ riga.codice }}</td>
-              <td>{{ riga.colore }}</td>
-              <td style="background-color: {{ riga.codice }} ;"></td>
-            </tr>
-            {% endfor %} 
           </table>
           {% endif %}
           

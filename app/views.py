@@ -9,33 +9,30 @@ def index(request):
     if request.method == 'POST':
         codice = request.POST['codice'].lower()
         colore = ""
-        for c in Colori.objects.all():
-            if c.codice == codice:
-                return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
-        for posizione in range(len(request.POST['colore'])):
-            if posizione == 0:
-                colore += request.POST['colore'][posizione].upper()
-            else:
-                colore += request.POST['colore'][posizione].lower()
-        NuovoColore = Colori(codice = codice, colore = colore)
-        NuovoColore.save()
-        return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
-    elif request.method == 'GET':
-        codice = request.GET.get('codice')
-        if codice != "":
-            codice.replace("%23","#")
-        colore = ""
-        if request.POST.get('colore') and codice != "":
-            for posizione in range(len(request.POST.get('colore'))):
-                if posizione == 0:
-                    colore += request.POST['colore'][posizione].upper()
-                else:
-                    colore += request.POST['colore'][posizione].lower()
-            select = Colori.objects.filter(colore__startswith=colore, codice__startswith=codice)
-            return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':select})
-        elif codice != "":
-            select = Colori.objects.filter(codice__startswith=codice)
-            return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':select})
-        return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'select':{}})
+        metodo = request.POST['metodo']
+        if metodo == "Inserisci":
+            for c in Colori.objects.all():
+                if c.codice == codice:
+                    return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
+            NuovoColore = Colori(codice = codice, colore = colore)
+            NuovoColore.save()
+            return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
+        if metodo == "Ricerca":
+            colori = []
+            if len(request.POST['colore']) >= 1:
+                for posizione in range(len(request.POST['colore'])):
+                    if posizione == 0:
+                        colore += request.POST['colore'][posizione].upper()
+                    else:
+                        colore += request.POST['colore'][posizione].lower()
+                colori = Colori.objects.filter(colore__startswith = colore)
+            if codice:
+                for colore in Colori.objects.filter(codice__startswith = codice):
+                    if colore in colori:
+                        colori.remove(colore)
+            return render(request,'app/index.html', {'form':form,'colori': colori})
+
+                
+
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
