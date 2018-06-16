@@ -31,6 +31,7 @@ def index(request):
                     else:
                         colore += request.POST['colore'][posizione].lower()
                 colori = Colori.objects.filter(colore__startswith = colore)  # lista dei colori che si chiamano come quelli cercati
-            return render(request,'app/index.html', {'form':form,'colori': colori})
+                return render(request,'app/index.html', {'form':form,'colori': colori})
+            return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
