@@ -39,9 +39,7 @@ def index(request):
                     if colore not in colori:
                         colori2.remove(colore)
                 return render(request,'app/index.html', {'form':form,'colori': colori2})
-            return render(request,'app/index.html', {'form':form,'colori': colori})
-
-                
-
+            if len(request.POST['colore']) == 0 and not codice:
+                return render(request,'app/index.html', {'form':form,'colori': colori})
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
