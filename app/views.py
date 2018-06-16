@@ -23,7 +23,7 @@ def index(request):
             NuovoColore.save()
             return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})  #invia la lista di tutti i colori
         if metodo == "Ricerca":  #se si vuole cercare un colore
-            colore = []
+            colori = []        
             if len(request.POST['colore']) >= 1:
                 for posizione in range(len(request.POST['colore'])):
                     if posizione == 0:
