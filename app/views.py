@@ -38,7 +38,7 @@ def index(request):
                 for colore in colori2:
                     if colore not in colori:
                         colori2.remove(colore)
-            return render(request,'app/index.html', {'form':form,'colori': colori})
+            return render(request,'app/index.html', {'form':form,'colori': colori2})
 
                 
 
