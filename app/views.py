@@ -33,7 +33,7 @@ def index(request):
                 colori = Colori.objects.filter(colore__startswith = colore)
             if codice:
                 for colore in Colori.objects.filter(codice__startswith = codice):
-                    if colore in colori:
+                    if colore not in colori:
                         colori.remove(colore)
             return render(request,'app/index.html', {'form':form,'colori': colori})
 
