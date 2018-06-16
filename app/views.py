@@ -14,6 +14,11 @@ def index(request):
             for c in Colori.objects.all():
                 if c.codice == codice:
                     return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
+                for posizione in range(len(request.POST['colore'])):
+                    if posizione == 0:
+                        colore += request.POST['colore'][posizione].upper()
+                    else:
+                        colore += request.POST['colore'][posizione].lower()
             NuovoColore = Colori(codice = codice, colore = colore)
             NuovoColore.save()
             return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})

@@ -30,6 +30,7 @@
 
         <form method="POST" action="">
           <h1>Cerca dei colori</h1>
+          {% csrf_token %}
           <p><label for="id_colore">Codice esadecimale:</label><input type="text" name="codice" id="id_codice" /></p>
           <p><label for="id_colore">Nome del colore:</label> <input type="text" name="colore" maxlength="30" id="id_colore" /></p>
           <input type="hidden" value="Ricerca" name="metodo">
