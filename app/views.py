@@ -32,9 +32,10 @@ def index(request):
                         colore += request.POST['colore'][posizione].lower()
                 colori = Colori.objects.filter(colore__startswith = colore)
             if codice:
-                for colore in Colori.objects.filter(codice__startswith = codice):
+                colori2 = Colori.objects.filter(codice__startswith = codice)
+                for colore in colori2:
                     if colore not in colori:
-                        colori.remove(colore)
+                        colori2.remove(colore)
             return render(request,'app/index.html', {'form':form,'colori': colori})
 
                 
