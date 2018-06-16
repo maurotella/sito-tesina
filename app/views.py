@@ -7,10 +7,10 @@ from .forms import ColoriForm
 def index(request):
     form = ColoriForm()
     if request.method == 'POST':
-        codice = request.POST['codice'].lower()
         colore = ""
         metodo = request.POST['metodo']
         if metodo == "Inserisci":  #se si vuole inserire un colore
+            codice = request.POST['codice'].lower()
             for c in Colori.objects.all():
                 if c.codice == codice:
                     return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
