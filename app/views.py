@@ -18,7 +18,7 @@ def aggiungi(request):
     for c in Colori.objects.all():
         if c.codice == codice:
             return redirect('/app?errore=esiste+già')
-    for posizione in range(len(request.POST.get('colore')):
+    for posizione in range(len(request.POST.get('colore'))):
         if posizione == 0:
             colore += colore[posizione].upper()
         else:
