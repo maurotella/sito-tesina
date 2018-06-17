@@ -19,9 +19,9 @@ def aggiungi(request):
             return redirect('/app?errore=esiste+già')
     for posizione in range(len(request.POST.get('colore'))):
         if posizione == 0:
-            colore += colore[posizione].upper()
+            colore += request.POST.get('colore')[posizione].upper()
         else:
-            colore += colore[posizione].lower()
+            colore += request.POST.get('colore')[posizione].lower()
     NuovoColore = Colori(codice ='#'+codice, colore = colore2)
     NuovoColore.save()
     return redirect('/app/')
