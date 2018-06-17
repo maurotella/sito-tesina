@@ -22,7 +22,7 @@ def aggiungi(request):
             colore += request.POST.get('colore')[posizione].upper()
         else:
             colore += request.POST.get('colore')[posizione].lower()
-    NuovoColore = Colori(codice ='#'+codice, colore = colore2)
+    NuovoColore = Colori(codice ='#'+codice, colore = colore)
     NuovoColore.save()
     return redirect('/app/')
 
