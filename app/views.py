@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Colori
 from .forms import ColoriForm
 
@@ -35,3 +35,8 @@ def index(request):
             return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
+
+
+def cancella(request, codice):
+    Colori.objects.filter(codice=codice).delete()
+    return redirect('/app/')
