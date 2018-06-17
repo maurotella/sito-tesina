@@ -56,7 +56,7 @@
               <td style="background-color: {{ riga.codice }} ;"></td>
               <td><a href="" id="cancella"><i class="fas fa-trash-alt"></i></a></td>      
               <script>
-                document.getElementById('cancella').setAttribute('href','elimina/{{riga.codice}}'.replace('#',''));
+                document.getElementById('{{riga.codice}}').setAttribute('href','elimina/{{riga.codice}}'.replace('#',''));
               </script> 
             </tr>
             {% endfor %}
