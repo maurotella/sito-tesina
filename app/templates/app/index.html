@@ -17,7 +17,7 @@
 
     <div class="colonna">
       <div class="form">
-        <form method="POST" action="">
+        <form method="POST" action="aggiungi">
         <h2>Inserisci dei colori</h2>
         {% csrf_token %}
         {% for f in form %}
@@ -29,7 +29,7 @@
           <input type="submit" value="Inserisci">
         </form>
 
-        <form method="POST" action="">
+        <form method="POST" action="cerca">
           <h2>Cerca dei colori</h2>
           {% csrf_token %}
           <p><label for="id_colore">Nome del colore:</label> <input type="text" name="colore" maxlength="30" id="id_colore" /></p>
