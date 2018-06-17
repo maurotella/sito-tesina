@@ -7,7 +7,7 @@ from .forms import ColoriForm
 def index(request):
     form = ColoriForm()
     if request.method == "GET":
-        if request.GET['errore'] == 'esiste già':
+        if request.GET.get('errore') == 'esiste già':
             return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
         else:
             return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
