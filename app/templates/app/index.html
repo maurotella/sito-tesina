@@ -51,7 +51,7 @@
             {% endif %}
             {% for riga in colori %}
             <tr>
-              <td>{{ riga.codice }}</td>
+              <td id="{{ riga.codice }}">{{ riga.codice }}</td>
               <td>{{ riga.colore }}</td>
               <td style="background-color: {{ riga.codice }} ;"></td>
               <td><a href="" id="cancella"><i class="fas fa-trash-alt"></i></a></td>      
