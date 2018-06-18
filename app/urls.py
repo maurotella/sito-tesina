@@ -8,3 +8,6 @@ urlpatterns = [
     path('cerca', views.cerca, name="cerca"),
     path('elimina/<str:codice>', views.cancella, name="cancella"),
 ]
+
+
+
