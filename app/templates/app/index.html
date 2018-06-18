@@ -13,6 +13,12 @@
   <h1>Database <span>colori</span></h1>
 </header>
 
+{% if errore == "Esiste già" %}
+  <script>
+    alert("Il codice è già stato usato");
+  </script>
+{% endif %}
+
 <div class="div">
 
     <div class="colonna">
@@ -70,12 +76,6 @@
 
     </div>
 </div>
-
-{% if errore == "Esiste già" %}
-  <script>
-    alert("Il codice è già stato usato");
-  </script>
-{% endif %}
 
 
 </body>

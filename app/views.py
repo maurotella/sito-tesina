@@ -12,7 +12,7 @@ def index(request):
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
 
 def aggiungi(request):
-    codice = request.POST.get('codice')
+    codice = request.POST.get('codice').lower()
     colore = ""
     for c in Colori.objects.all():
         if c.codice == codice:
@@ -25,6 +25,13 @@ def aggiungi(request):
     NuovoColore = Colori(codice =codice, colore = colore)
     NuovoColore.save()
     return redirect('/app/')
+
+def cerca(request):
+    colore = request.POST.get('colore')
+    if colore:
+        select = Colori.objects.filter(colore__startswith=colore)
+        return render(request,'app/index.html', {'form':form,'colori': select})
+    return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
 
 def cancella(request, codice):
     Colori.objects.filter(codice='#'+codice).delete()
