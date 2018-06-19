@@ -42,3 +42,8 @@ def cerca(request):
 def cancella(request, codice):
     Colori.objects.filter(codice='#'+codice).delete()
     return redirect('/app/')
+
+
+
+
+    
