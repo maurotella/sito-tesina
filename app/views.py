@@ -28,7 +28,12 @@ def aggiungi(request):
     return redirect('/app/')
 
 def cerca(request):
-    colore = request.GET.get('colore')
+    colore = ""
+    for posizione in range(len(request.GET.get('colore'))):
+        if posizione == 0:
+            colore += request.GET.get('colore')[posizione].upper()
+        else:
+            colore += request.GET.get('colore')[posizione].lower()
     if colore:
         select = Colori.objects.filter(colore__startswith=colore)
         return select
