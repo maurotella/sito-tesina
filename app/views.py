@@ -12,7 +12,7 @@ def index(request):
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
 
 def aggiungi(request):
-    codice = request.POST.get('codice').lower(
+    codice = request.POST.get('codice').lower()
     colore = ""
     for c in Colori.objects.all():
         if c.codice == codice:
