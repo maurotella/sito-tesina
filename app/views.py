@@ -12,7 +12,6 @@ def index(request):
         return render(request,'app/index.html', {'form':form,'colori': cerca(request)})
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
-
 def aggiungi(request):
     codice = request.POST.get('codice').lower()
     colore = ""
@@ -29,7 +28,7 @@ def aggiungi(request):
     return redirect('/app/')
 
 def cerca(request):
-    colore = request.POST.get('colore')
+    colore = request.GET.get('colore')
     if colore:
         select = Colori.objects.fllter(colore__startswith=colore)
         return select
