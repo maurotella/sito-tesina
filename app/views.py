@@ -8,7 +8,7 @@ def index(request):
     form = ColoriForm()
     if request.GET.get('errore') == 'esiste già':
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all(),'errore':'Esiste già'})
-    elif request.GET.get('colore'):
+    elif request.POST.get('colore'):
         return render(request,'app/index.html', {'form':form,'colori': cerca(request)})
     else:
         return render(request,'app/index.html', {'form':form,'colori': Colori.objects.all()})
@@ -29,11 +29,11 @@ def aggiungi(request):
 
 def cerca(request):
     colore = ""
-    for posizione in range(len(request.GET.get('colore'))):
+    for posizione in range(len(request.POST.get('colore'))):
         if posizione == 0:
-            colore += request.GET.get('colore')[posizione].upper()
+            colore += request.POST.get('colore')[posizione].upper()
         else:
-            colore += request.GET.get('colore')[posizione].lower()
+            colore += request.POST.get('colore')[posizione].lower()
     if colore:
         select = Colori.objects.filter(colore__startswith=colore)
         return select
