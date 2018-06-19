@@ -30,7 +30,7 @@ def aggiungi(request):
 def cerca(request):
     colore = request.GET.get('colore')
     if colore:
-        select = Colori.objects.fllter(colore__startswith=colore)
+        select = Colori.objects.filter(colore__startswith=colore)
         return select
     return Colori.objects.all()
 
