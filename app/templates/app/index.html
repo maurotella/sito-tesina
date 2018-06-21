@@ -9,10 +9,6 @@
 </head>
 
 <body>
-<header>
-  <h1>Database <span>colori</span></h1>
-</header>
-
 {% if errore == "Esiste già" %}
   <script>
     alert("Il codice è già stato usato");
@@ -23,6 +19,9 @@
 <div class="div">
 
     <div class="colonna">
+      <header>
+        <h1>Database <span>colori</span></h1>
+      </header>
       <div class="form">
         <form method="POST" action="aggiungi">
         <h2>Inserisci dei colori</h2>
