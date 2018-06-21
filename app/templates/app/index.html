@@ -38,7 +38,10 @@
         <form method="POST" action="">
           <h2>Cerca dei colori</h2>
           {% csrf_token %}
-          <p><label for="id_colore">Nome del colore:</label> <input type="text" name="colore" maxlength="30" id="id_colore" /></p>
+          <p>
+            <label for="id_colore">Nome del colore:</label> 
+            <input type="text" name="colore" maxlength="30" id="id_colore" />
+          </p>
           <input type="hidden" value="Ricerca" name="metodo">
           <input type="submit" value="Cerca">
         </form>
@@ -84,7 +87,7 @@
                   <li><ul>
                     <li><i class="far fa-folder fa-sm"></i>app</li>
                     <li><ul>
-                      <li><i class="fas fa-code fa-sm"></i>index.html</li>
+                      <li class="index"><i class="fas fa-code fa-sm"></i>index.html</li>
                     </ul></li>
                   </ul></li>
                   <li><i class="fab fa-python fa-sm"></i>forms.py</li>
@@ -116,6 +119,7 @@
         </tr>
         <tr>
           <td><img src="{% static 'app/img/views.PNG' %}" class="img-views"></td>
+          <td><img src="{% static 'app/img/index.PNG' %}" class="img-index"></td>
         </tr>
       </table>
     </div>
