@@ -45,7 +45,30 @@
           <input type="submit" value="Cerca">
         </form>
       </div>  
-      <iframe src="{% static 'app/iframe.html' %}"></iframe>
+      <table>
+        <tr>
+          <th>Codice</th>
+          <th>Colore</th>
+          <th>Esempio</th>
+          <th>Elimina</th>
+        </tr>
+        {% if not colori %}
+        <tr>
+          <td colspan="4">Non ci sono Colori</td>
+        </tr>
+        {% endif %}
+        {% for riga in colori %}
+        <tr>
+          <td>{{ riga.codice }}</td>
+          <td>{{ riga.colore }}</td>
+          <td style="background-color: {{ riga.codice }} ;"></td>
+          <td><a href="" id="{{ riga.codice }}"><i class="fas fa-trash-alt"></i></a></td>      
+          <script>
+            document.getElementById('{{riga.codice}}').setAttribute('href','elimina/{{riga.codice}}'.replace('#',''));
+          </script> 
+        </tr>
+        {% endfor %}
+      </table>
     </div>
     <div class="colonna">
       <table class="table">
