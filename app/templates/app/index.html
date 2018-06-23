@@ -6,6 +6,8 @@
   <title>Colori</title>
   <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
   <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -75,7 +77,7 @@
     <div class="colonna">
       <table class="table">
         <tr>
-          <td><div><img src="{% static 'app/img/urlsMaster.PNG' %}" class="img-urlsMaster"></div></td>
+          <td><div><img src="{% static 'app/img/urlsMaster.PNG' %}" class="img-urlsMaster" data-toggle="magnify"></div></td>
           <td rowspan="4" class="fisso">
             <div>
             <h2>Directory progetto</h2>
@@ -114,10 +116,10 @@
           </td>
         </tr>
         <tr>
-          <td><img src="{% static 'app/img/urls.PNG' %}" class="img-urls"></td>
+          <td><img src="{% static 'app/img/urls.PNG' %}" class="img-urls" data-toggle="magnify"></td>
         </tr>
         <tr>
-          <td><div class="img-div"><img src="{% static 'app/img/views.PNG' %}" class="img-views"></div></td>
+          <td><div class="img-div"><img src="{% static 'app/img/views.PNG' %}" class="img-views" data-toggle="magnify"></div></td>
         </tr>
         <tr>
           <td><img src="{% static 'app/img/index.PNG' %}" class="img-index"></td>
