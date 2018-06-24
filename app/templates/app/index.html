@@ -118,10 +118,10 @@
           <td><img src="{% static 'app/img/urls.PNG' %}" class="img-urls" data-magnify-src="{% static 'app/img/urls2x.PNG' %}"></td>
         </tr>
         <tr>
-          <td><div class="img-div"><img src="{% static 'app/img/views.PNG' %}" class="img-views" data-magnify-src="{% static 'app/img/views2x.PNG' %}"></div></td>
+          <td><div class="img-div"><img src="{% static 'app/img/views.PNG' %}" id="zoom" class="img-views" data-magnify-src="{% static 'app/img/views2x.PNG' %}"></div></td>
         </tr>
         <tr>
-          <td><img src="{% static 'app/img/index.PNG' %}" class="img-index" data-magnify-src="{% static 'app/img/index2x.PNG' %}"></td>
+          <td><img src="{% static 'app/img/index.PNG' %}" class="img-index" id="zoom" data-magnify-src="{% static 'app/img/index2x.PNG' %}"></td>
         </tr>
       </table>
     </div>
@@ -132,7 +132,7 @@
 <script>
   var $zoom;
   $(document).ready(function() {
-    $zoom = $('img').magnify({
+    $zoom = $('#zoom').magnify({
       });
   });
 </script>
