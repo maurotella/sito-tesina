@@ -43,6 +43,9 @@ def cancella(request, codice):
     Colori.objects.filter(codice='#'+codice).delete()
     return redirect('/app/')
 
+def lista(request):
+    return render(request,'app/lista.html')
+
 
 
 
