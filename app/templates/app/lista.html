@@ -8,17 +8,17 @@
 <body>
   <br><br>
   
-  <form method="POST" action="">
+  <form method="POST" action="" id="form">
     {% csrf_token %}
-    {{form}}
     <input type="submit" value="Inserisci">
   </form>
- 
+    <textarea name="testo" cols="40" rows="10" maxlength="500" required="" form="form"></textarea>
+  
   <br><br>
   
   {% for l in lista %}
     <div style="border-style:solid;padding:4px">
-      {{l.testo|linebreaks}}
+      {{l.testo}}
     </div>
     <br>
   {% endfor %}
