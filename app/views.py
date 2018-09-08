@@ -44,6 +44,9 @@ def cancella(request, codice):
     return redirect('/app/')
 
 def lista(request):
+    if request.POST:
+        NuovoComando = Lista(testo = request.POST.get('testo'))
+        NuovoComando.save()
     return render(request,'app/lista.html',{'lista':Lista.objects.all(),'form':ListaForm()})
 
 
