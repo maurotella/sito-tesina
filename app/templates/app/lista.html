@@ -10,9 +10,9 @@
   
   <form method="POST" action="" id="form">
     {% csrf_token %}
-    <input type="submit" value="Inserisci">
   </form>
     <textarea name="testo" cols="40" rows="10" maxlength="500" required="" form="form"></textarea>
+    <input type="submit" value="Inserisci" form="form">
   
   <br><br>
   
