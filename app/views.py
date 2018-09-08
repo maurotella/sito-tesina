@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Colori
-from .forms import ColoriForm
+from .models import Colori,Lista
+from .forms import ColoriForm,ListaForm
 
 # Create your views here.
 
