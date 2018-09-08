@@ -44,7 +44,8 @@ def cancella(request, codice):
     return redirect('/app/')
 
 def lista(request):
-    return render(request,'app/lista.html')
+    return render(request,'app/lista.html',{'lista':Lista.objects.all(),'form':ListaForm()})
+
 
 
 
