@@ -8,12 +8,15 @@
 <body>
   <br><br>
   
-  {{form}}
+  <form method="POST" action="">
+    {{form}}
+    <input type="submit" value="Inserisci">
+  </form>
  
   <br><br>
   
   {% for l in lista %}
-    <div style="border-style:solid;border:2px">
+    <div style="border-style:solid;padding:4px">
     {{l.testo}}
     </div>
     <br>
