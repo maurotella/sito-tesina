@@ -11,5 +11,5 @@ class Colori(models.Model):
     
    
 class Lista(models.Model):
-    testo = models.CharField(max_length=500)
+    testo = models.TextField(max_length=500)
     
