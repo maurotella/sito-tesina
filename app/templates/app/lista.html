@@ -18,7 +18,7 @@
   
   {% for l in lista %}
     <div style="border-style:solid;padding:4px">
-      <pre>{{l.testo}}</pre>
+      {{l.testo|linebreaks}}
     </div>
     <br>
   {% endfor %}
