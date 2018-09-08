@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='lista2',
+            model_name='Lista',
             name='testo',
             field=models.TextField(max_length=500),
         ),
