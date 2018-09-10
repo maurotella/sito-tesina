@@ -25,4 +25,5 @@ def carica_classifica(request,gioco):
         classifica = Classifica.objects.filter(gioco="2048").order_by('-risultato') 
     return render(request,'giochi/classifica.html', {'gioco':gioco, 'classifica':classifica})
 
-    
+def snake(request):
+    return render(request, 'giochi/snake.html')
