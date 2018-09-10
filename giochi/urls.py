@@ -8,4 +8,5 @@ urlpatterns = [
     path('2048', views.gioco2048 , name="2048"),
     path('classifica/<str:gioco>/<int:risultato>/<str:user>', views.risultato, name="risultato"),
     path('iframe-classifica/<str:gioco>',views.carica_classifica, name="carica-classifica"),
+    path('snake',views.snake, name="snake"),
 ]
