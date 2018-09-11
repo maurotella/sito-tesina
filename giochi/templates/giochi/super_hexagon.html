@@ -1,0 +1,25 @@
+<html>
+{% load static %}
+	<head>
+		<title>Webagon</title>
+        <link href="{% static 'giochi/super_hexagon/css/style.css' %}" media="all" rel="stylesheet" />
+	</head>
+	<body>
+        <div id="info">Loading music<span id="loading_dots"></span></div>   
+        <div id="score">
+            <div id="current">Score: <span id ="current_n">0</span></div>
+            <div id="best">Best: <span id ="best_n">0</span></div>
+        </div>
+        <div id="howto">Use  [<]  and  [>]  to play</-></div> 
+        <div onclick="play();" id="play">Click here to play!</div>
+        <script src="{% static 'giochi/super_hexagon/js/sweep.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/jquery-2.0.0.min.js' %}"></script>
+		    <script src="{% static 'giochi/super_hexagon/js/three.min.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/OrbitControls.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/THREEx.KeyboardState.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/THREEx.WindowResize.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/audio.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/ui.js' %}"></script>
+        <script src="{% static 'giochi/super_hexagon/js/game.js' %}"></script>
+	</body>
+</html>
