@@ -27,3 +27,6 @@ def carica_classifica(request,gioco):
 
 def snake(request):
     return render(request, 'giochi/snake.html')
+
+def flappy_bird(request):
+    return render(request, 'giochi/flappy_bird.html')
