@@ -10,4 +10,5 @@ urlpatterns = [
     path('iframe-classifica/<str:gioco>',views.carica_classifica, name="carica-classifica"),
     path('snake',views.snake, name="snake"),
     path('flappy_bird',views.flappy_bird, name="flappy_bird"),
+    path('super_hexagon',views.super_hexagon, name="super_hexagon"),
 ]
