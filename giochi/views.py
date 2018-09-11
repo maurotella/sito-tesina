@@ -30,3 +30,6 @@ def snake(request):
 
 def flappy_bird(request):
     return render(request, 'giochi/flappy_bird.html')
+
+def super_hexagon(request):
+    return render(request, 'giochi/super_hexagon.html')
